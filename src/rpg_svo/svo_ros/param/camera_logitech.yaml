@@ -1,0 +1,14 @@
+cam_model: Pinhole
+cam_width: 800
+cam_height: 600
+cam_fx: 886.629298
+cam_fy: 885.385932
+cam_cx: 410.051728
+cam_cy: 308.683561
+cam_d0:  0.011173
+cam_d1: -0.023736
+cam_d2:  0.011520
+cam_d3: -0.005213
+cam_calib_date: '2015-10-19'
+cam_name: Logitech
+cam_description: 'Logitech'
