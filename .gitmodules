@@ -1,0 +1,21 @@
+[submodule "src/mavros"]
+	path = src/mavros
+	url = https://github.com/mavlink/mavros.git
+[submodule "src/asctec_mav_framework"]
+	path = src/asctec_mav_framework
+	url = https://github.com/ethz-asl/asctec_mav_framework.git
+[submodule "src/catkin_simple"]
+	path = src/catkin_simple
+	url = https://github.com/catkin/catkin_simple.git
+[submodule "src/ethzasl_msf"]
+	path = src/ethzasl_msf
+	url = https://github.com/ethz-asl/ethzasl_msf.git
+[submodule "src/gflags_catkin"]
+	path = src/gflags_catkin
+	url = https://github.com/ethz-asl/gflags_catkin.git
+[submodule "src/glog_catkin"]
+	path = src/glog_catkin
+	url = https://github.com/ethz-asl/glog_catkin.git
+[submodule "src/vision_opencv"]
+	path = src/vision_opencv
+	url = https://github.com/ros-perception/vision_opencv.git

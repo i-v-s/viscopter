@@ -54,5 +54,5 @@
         <remap from="msf_updates/pose_with_covariance_input" to="/svo/pose" />
         <rosparam file="$(find msf_updates)/px4_svo_sensor_fix.yaml"/>
     </node>
- 
+    <node pkg="rosservice" type="rosservice" name="initialize" args="call --wait /msf_viconpos_sensor/pose_sensor/initialize_msf_scale 1"/>
 </launch>
