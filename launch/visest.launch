@@ -24,7 +24,7 @@
  
     <node name="mavros" pkg="mavros" type="mavros_node" output="screen">
 	   <remap from="mavros/vision_pose/pose_cov" to="/msf_core/pose" />
- 
+
 	   <param name="fcu_url" value="$(arg fcu_url)" />
 	   <param name="gcs_url" value="$(arg gcs_url)" />
 	   <param name="target_system_id" value="$(arg tgt_system)" />

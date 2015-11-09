@@ -21,10 +21,10 @@
         <remap from="image" to="/camera/image_raw" />
 
     </node>-->
- 
+
     <node name="mavros" pkg="mavros" type="mavros_node" output="screen">
 	   <remap from="mavros/vision_pose/pose_cov" to="/msf_core/pose" />
- 
+
 	   <param name="fcu_url" value="$(arg fcu_url)" />
 	   <param name="gcs_url" value="$(arg gcs_url)" />
 	   <param name="target_system_id" value="$(arg tgt_system)" />
@@ -35,10 +35,8 @@
 	   <param name="conn_heartbeat" value="5.0" />
 	   <param name="conn_timeout" value="10.0" />
 	   <param name="startup_px4_usb_quirk" value="true" />
-	   <param name="position/vision/pose_with_covariance" value="true" />
- 
     </node>
- 
+
     <node pkg="svo_ros" type="vo" name="svo" clear_params="true">
         <param name="cam_topic" value="/camera/image_raw" type="str" />
         <rosparam file="$(find svo_ros)/param/camera_ps3eye.yaml" />
