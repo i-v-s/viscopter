@@ -22,3 +22,6 @@
 [submodule "src/rpg_svo"]
 	path = src/rpg_svo
 	url = https://github.com/i-v-s/rpg_svo.git
+[submodule "src/fast"]
+	path = src/fast
+	url = https://github.com/uzh-rpg/fast.git
