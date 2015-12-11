@@ -1,6 +1,3 @@
-[submodule "src/mavros"]
-	path = src/mavros
-	url = https://github.com/mavlink/mavros.git
 [submodule "src/asctec_mav_framework"]
 	path = src/asctec_mav_framework
 	url = https://github.com/ethz-asl/asctec_mav_framework.git
@@ -19,3 +16,9 @@
 [submodule "src/vision_opencv"]
 	path = src/vision_opencv
 	url = https://github.com/ros-perception/vision_opencv.git
+[submodule "src/mavros"]
+	path = src/mavros
+	url = https://github.com/mavlink/mavros.git
+[submodule "src/mavlink"]
+	path = src/mavlink
+	url = https://github.com/mavlink/mavlink.git
