@@ -1,0 +1,71 @@
+<launch>
+    <arg name="fcu_url" default="serial:///dev/ttyUSB0:921600" />
+    <arg name="gcs_url" default="udp://:14556@127.0.0.1:14550" />
+    <arg name="tgt_system" default="1" />
+    <arg name="tgt_component" default="1" />
+ 
+    <node name="camera" pkg="usb_cam" type="usb_cam_node">
+        <param name="video_device" value="/dev/video0" />
+        <param name="image_width" value="320" />
+        <param name="image_height" value="240" />
+        <param name="pixel_format" value="yuyv" />
+        <param name="framerate" value="125" />
+        <param name="camera_frame_id" value="webcam" />
+    </node>
+ 
+    <!--<node name="proc" ns="camera" pkg="image_proc" type="image_proc" 
+        args="" output="screen" respawn="true">
+    </node>
+
+    <node name="view" pkg="image_view" type="image_view">
+        <remap from="image" to="/camera/image_raw" />
+
+    </node>-->
+
+
+<!--        <include file="$(find mavros)/launch/node.launch">
+                <arg name="pluginlists_yaml" value="$(find mavros)/launch/px4_pluginlists.yaml" />
+                <arg name="config_yaml" value="$(find mavros)/launch/px4_config.yaml" />
+
+                <arg name="fcu_url" value="$(arg fcu_url)" />
+                <arg name="gcs_url" value="$(arg gcs_url)" />
+                <arg name="tgt_system" value="$(arg tgt_system)" />
+                <arg name="tgt_component" value="$(arg tgt_component)" />
+                <arg name="log_output" value="screen" />
+        </include>-->
+
+
+    <node name="mavros" pkg="mavros" type="mavros_node" respawn="true">
+	   <remap from="mavros/vision_pose/pose_cov" to="/msf_core/pose" />
+
+	   <param name="fcu_url" value="$(arg fcu_url)" />
+	   <param name="gcs_url" value="$(arg gcs_url)" />
+	   <param name="target_system_id" value="$(arg tgt_system)" />
+	   <param name="target_component_id" value="$(arg tgt_component)" />
+ 
+        <param name="pluginlists_yaml" value="$(find mavros)/launch/px4_pluginlists.yaml" />
+        <param name="config_yaml" value="$(find mavros)/launch/px4_config.yaml" />
+        <param name="plugin_whitelist" value="command" />
+	   <param name="conn_heartbeat" value="5.0" />
+	   <param name="conn_timeout" value="10.0" />
+	   <param name="startup_px4_usb_quirk" value="true" />
+    </node>
+
+
+
+    <node pkg="svo_ros" type="vo" name="svo" clear_params="true" output="screen">
+        <param name="cam_topic" value="/camera/image_raw" type="str" />
+        <rosparam file="$(find svo_ros)/param/camera_ps3eyehr.yaml" />
+        <rosparam file="$(find svo_ros)/param/vo_fast.yaml" />
+        <param name="accept_console_user_input" value="true" />
+        <param name="publish_world_in_cam_frame" value="false" />
+        <param name="init_rx" value="3.1415289878" />
+ 
+    </node>
+ 
+    <!--<node name="msf_pose_sensor" pkg="msf_updates" type="pose_sensor" clear_params="true" output="screen">
+        <remap from="msf_core/imu_state_input" to="/mavros/imu/data" />
+        <remap from="msf_updates/pose_with_covariance_input" to="/svo/pose" />
+        <rosparam file="$(find msf_updates)/px4_svo_sensor_fix.yaml"/>
+    </node>-->
+</launch>

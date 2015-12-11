@@ -1,0 +1,14 @@
+cam_model: Pinhole
+cam_width: 320
+cam_height: 240
+cam_fx: 261.3
+cam_fy: 260.1
+cam_cx: 153.99
+cam_cy: 107.85
+cam_d0:  -0.108649
+cam_d1: 0.223466
+cam_d2: -0.000010
+cam_d3: -0.001332
+cam_calib_date: '2015-10-19'
+cam_name: PS3eyehr
+cam_description: 'PS3 Eyehr'
