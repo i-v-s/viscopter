@@ -2,3 +2,4 @@ grid_size: 30
 max_n_kfs: 20
 loba_num_iter: 5
 max_fts: 180
+quality_min_fts: 30
