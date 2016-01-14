@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package>
+  <name>mavlink</name>
+  <version>0.1.1</version>
+  <description>MAVLink extended with ROS messages</description>
+
+  <maintainer email="smirnoviv@rambler.ru">Igor Smirnov</maintainer>
+  <license>BSD</license>
+
+  <author email="mail@qgroundcontrol.org">Lorenz Meier</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
