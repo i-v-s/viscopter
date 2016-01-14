@@ -19,12 +19,12 @@
 [submodule "src/mavros"]
 	path = src/mavros
 	url = https://github.com/mavlink/mavros.git
-[submodule "src/mavlink"]
-	path = src/mavlink
-	url = https://github.com/mavlink/mavlink.git
 [submodule "src/rpg_svo"]
 	path = src/rpg_svo
 	url = https://github.com/i-v-s/rpg_svo.git
 [submodule "src/fast"]
 	path = src/fast
 	url = https://github.com/uzh-rpg/fast.git
+[submodule "src/mavlink/include/mavlink"]
+	path = src/mavlink/include/mavlink
+	url = https://github.com/i-v-s/mavlink_c.git
