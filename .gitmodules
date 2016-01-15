@@ -28,3 +28,6 @@
 [submodule "src/mavlink/include/mavlink"]
 	path = src/mavlink/include/mavlink
 	url = https://github.com/i-v-s/mavlink_c.git
+[submodule "src/gcs_agent"]
+	path = src/gcs_agent
+	url = https://github.com/i-v-s/gcs_agent.git

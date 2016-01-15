@@ -1,0 +1,4 @@
+#!/bin/bash
+. /opt/ros/jade/setup.bash
+. devel/setup.bash
+roslaunch launch/gcs.launch

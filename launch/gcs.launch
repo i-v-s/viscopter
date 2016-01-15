@@ -1,0 +1,14 @@
+<launch>
+    <arg name="gcs_url" default="udp://:14556@localhost:14550" />
+    <arg name="tgt_system" default="1" />
+    <arg name="tgt_component" default="50" />
+	<node name="gcs_agent" pkg="gcs_agent" type="gcs_agent" output="screen">
+	    <param name="launch_path" value="/home/igor/viscopter/launch" />
+	    <!--<param name="fake_svo" value="false" />-->
+	</node>
+    <node name="mavros" pkg="mavros" type="gcs_bridge" output="screen">
+	    <param name="gcs_url" value="$(arg gcs_url)" />
+	    <param name="target_system_id" value="$(arg tgt_system)" />
+	    <param name="target_component_id" value="$(arg tgt_component)" />
+    </node>
+ </launch>
