@@ -1,11 +1,11 @@
 blacklist: []
-build_space: build
+build_space: build-asan
 catkin_make_args: []
 cmake_args:
 - -DCMAKE_C_COMPILER=/usr/bin/clang-3.6
 - -DCMAKE_CXX_COMPILER=/usr/bin/clang++-3.6
 - -DCMAKE_CXX_FLAGS=-fsanitize=address -fno-omit-frame-pointer -DMAVLINK_DIALECT=ardupilotmega
-devel_space: devel
+devel_space: devel-asan
 extend_path: null
 install: false
 install_space: install
