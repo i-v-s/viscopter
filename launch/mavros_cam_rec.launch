@@ -1,0 +1,12 @@
+<launch>
+    <arg name="fcu_url" default="serial:///dev/ttyUSB0:921600" />
+    <arg name="gcs_url" default="udp://:14556@192.168.2.255:14550" />
+    <arg name="tgt_system" default="1" />
+    <arg name="tgt_component" default="1" />
+
+    <include file="$(env LAUNCH_DIR)/units/ps3.launch" />
+    <include file="$(env LAUNCH_DIR)/units/mavros.launch" />
+
+    <node pkg="rosbag" type="record" name="recorder"
+        args="-o $(env LAUNCH_DIR)/../bag/ps3 /camera/image_raw /mavros/imu/data" />
+</launch>
