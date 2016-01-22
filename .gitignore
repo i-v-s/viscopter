@@ -1,5 +1,7 @@
 /build
 /install
 /devel
+/devel-*
+/build-*
 /src/build-*
 
