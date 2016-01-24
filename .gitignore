@@ -4,4 +4,6 @@
 /devel-*
 /build-*
 /src/build-*
-
+/.catkin_tools/*/build.yaml
+/.catkin_tools/profiles.yaml
+/bag
