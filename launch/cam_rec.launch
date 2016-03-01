@@ -5,8 +5,7 @@
     <arg name="tgt_component" default="1" />
 
     <include file="$(env LAUNCH_DIR)/units/ps3.launch" />
-    <include file="$(env LAUNCH_DIR)/units/mavros.launch" />
-
+    
     <node pkg="rosbag" type="record" name="recorder"
-        args="-o $(env LAUNCH_DIR)/../bag/ps3 /camera/image_mono /mavros/imu/data" />
+        args="-o $(env LAUNCH_DIR)/../bag/ps3 /camera/image_raw /mavros/imu/data" />
 </launch>

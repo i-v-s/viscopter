@@ -1,0 +1,14 @@
+<launch>
+    <arg name="fcu_url" default="serial:///dev/ttyUSB0:921600" />
+    <arg name="gcs_url" default="udp://:14556@192.168.2.255:14550" />
+    <arg name="tgt_system" default="1" />
+    <arg name="tgt_component" default="1" />
+
+    <include file="$(env LAUNCH_DIR)/units/mavros.launch" />
+ 
+    <!--<node name="msf_pose_sensor" pkg="msf_updates" type="pose_sensor" clear_params="true" output="screen">
+        <remap from="msf_core/imu_state_input" to="/mavros/imu/data" />
+        <remap from="msf_updates/pose_with_covariance_input" to="/svo/pose" />
+        <rosparam file="$(find msf_updates)/px4_svo_sensor_fix.yaml"/>
+    </node>-->
+</launch>

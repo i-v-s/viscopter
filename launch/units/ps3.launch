@@ -7,4 +7,6 @@
         <param name="framerate" value="60" />
         <param name="camera_frame_id" value="webcam" />
     </node>
+    <node ns="camera" name="image_proc" pkg="image_proc" type="image_proc">
+    </node>
 </launch>
