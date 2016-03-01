@@ -1,0 +1,11 @@
+<launch>
+    <node pkg="svo_ros" type="vo" name="svo" clear_params="true" launch-prefix="gdbserver :32687" output="screen">
+        <param name="cam_topic" value="/camera/image_raw" type="str" />
+        <rosparam file="$(find svo_ros)/param/camera_ps3eye.yaml" />
+        <rosparam file="$(find svo_ros)/param/vo_px4.yaml" />
+        <param name="accept_console_user_input" value="true" />
+        <param name="publish_world_in_cam_frame" value="false" />
+        <param name="init_rx" value="3.1415289878" />
+        <param name="accept_console_user_input" value="false" />
+    </node>
+</launch>
